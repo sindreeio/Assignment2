@@ -55,10 +55,14 @@ body{
         	padding:10px;
         	background-color: #b0a295;
         }
+        .element-header{
+            width: 1fr;
+        	font-weight: bold;
+        }
         
         .courses{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             border-bottom: solid;
             
         }
@@ -81,10 +85,19 @@ stringbuilder <<"</body></html>"
 			stringBuilder << "<div class=space></div><div class=programme-container><h2>" << s.getName() << "</h2>" 
 			for (Semester sem : s.getSemesterInProgramme()){
 				stringBuilder << "<div class=semester-container> <div > <h3> Semester nummer " << sem.getSemesterNumber() << "</h3></div>" 
+				stringBuilder << "<div class=courses><div class=element-header> Course Code </div>"
+				stringBuilder << "<div class=element-header> Name </div>"
+				stringBuilder << "<div class=element-header> SP </div>"
+				stringBuilder << "<div class=element-header> Mandatory </div></div>"
 				for (courseInSemester cis : sem.getCourseInSemester()){
 					stringBuilder << "<div class=courses> <div class=element> " << cis.getCourse().getCourseCode() << "</div>"
 					stringBuilder << "<div class=element>" << cis.getCourse().getName() << "</div>"
-					stringBuilder << "<div class=element>" << cis.isMandatory() << "</div> </div>" 
+					stringBuilder << "<div class=element>" << cis.getCourse().getCredits() << "</div>"
+						if (cis.isMandatory()) {
+							stringBuilder << "<div class=element> O </div> </div>"
+						}else{
+							stringBuilder << "<div class=element> VA </div> </div>"
+						}
 				}
 			}
 			stringBuilder << "</div> <div class=padding><h3> Spesialiseringer</h3>"
@@ -93,10 +106,20 @@ stringbuilder <<"</body></html>"
 				stringBuilder << "<div>" << spes.getName() << "" 
 				for (Semester sem : spes.getSemesterInSpecialisation()){
 					stringBuilder << "<div class=semester-container> <div > <h3> Semester nummer " << sem.getSemesterNumber() << "</h3></div>" 
+					
+				stringBuilder << "<div class=courses><div class=element-header> Course Code </div>"
+				stringBuilder << "<div class=element-header> Name </div>"
+				stringBuilder << "<div class=element-header> SP </div>"
+				stringBuilder << "<div class=element-header> Mandatory </div></div>"
 					for (courseInSemester cis : sem.getCourseInSemester()){
 						stringBuilder << "<div class=courses> <div class=element> " << cis.getCourse().getCourseCode() << "</div>"
 						stringBuilder << "<div class=element>" << cis.getCourse().getName() << "</div>"
-						stringBuilder << "<div class=element>" << cis.isMandatory() << "</div> </div>" 
+						stringBuilder << "<div class=element>" << cis.getCourse().getCredits() << "</div>"
+						if (cis.isMandatory()) {
+							stringBuilder << "<div class=element> O </div> </div>"
+						}else{
+							stringBuilder << "<div class=element> VA </div> </div>"
+						}
 					}
 			}
 				stringBuilder << "</div>"

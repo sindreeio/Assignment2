@@ -128,6 +128,18 @@ public class HtmlMaker {
       _builder.append("}");
       _builder.newLine();
       _builder.append("        ");
+      _builder.append(".element-header{");
+      _builder.newLine();
+      _builder.append("            ");
+      _builder.append("width: 1fr;");
+      _builder.newLine();
+      _builder.append("        \t");
+      _builder.append("font-weight: bold;");
+      _builder.newLine();
+      _builder.append("        ");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("        ");
       _builder.newLine();
       _builder.append("        ");
       _builder.append(".courses{");
@@ -136,7 +148,7 @@ public class HtmlMaker {
       _builder.append("display: grid;");
       _builder.newLine();
       _builder.append("            ");
-      _builder.append("grid-template-columns: 1fr 1fr 1fr;");
+      _builder.append("grid-template-columns: 1fr 1fr 1fr 1fr;");
       _builder.newLine();
       _builder.append("            ");
       _builder.append("border-bottom: solid;");
@@ -194,6 +206,10 @@ public class HtmlMaker {
             int _semesterNumber = sem.getSemesterNumber();
             StringBuilder _doubleLessThan_5 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_4, Integer.valueOf(_semesterNumber));
             HtmlMaker.operator_doubleLessThan(_doubleLessThan_5, "</h3></div>");
+            HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=courses><div class=element-header> Course Code </div>");
+            HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> Name </div>");
+            HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> SP </div>");
+            HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> Mandatory </div></div>");
             EList<courseInSemester> _courseInSemester = sem.getCourseInSemester();
             for (final courseInSemester cis : _courseInSemester) {
               {
@@ -206,9 +222,15 @@ public class HtmlMaker {
                 StringBuilder _doubleLessThan_9 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_8, _name_2);
                 HtmlMaker.operator_doubleLessThan(_doubleLessThan_9, "</div>");
                 StringBuilder _doubleLessThan_10 = HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element>");
+                float _credits = cis.getCourse().getCredits();
+                StringBuilder _doubleLessThan_11 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_10, Float.valueOf(_credits));
+                HtmlMaker.operator_doubleLessThan(_doubleLessThan_11, "</div>");
                 boolean _isMandatory = cis.isMandatory();
-                StringBuilder _doubleLessThan_11 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_10, Boolean.valueOf(_isMandatory));
-                HtmlMaker.operator_doubleLessThan(_doubleLessThan_11, "</div> </div>");
+                if (_isMandatory) {
+                  HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element> O </div> </div>");
+                } else {
+                  HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element> VA </div> </div>");
+                }
               }
             }
           }
@@ -228,6 +250,10 @@ public class HtmlMaker {
                 int _semesterNumber = sem_1.getSemesterNumber();
                 StringBuilder _doubleLessThan_7 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_6, Integer.valueOf(_semesterNumber));
                 HtmlMaker.operator_doubleLessThan(_doubleLessThan_7, "</h3></div>");
+                HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=courses><div class=element-header> Course Code </div>");
+                HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> Name </div>");
+                HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> SP </div>");
+                HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element-header> Mandatory </div></div>");
                 EList<courseInSemester> _courseInSemester = sem_1.getCourseInSemester();
                 for (final courseInSemester cis : _courseInSemester) {
                   {
@@ -240,9 +266,15 @@ public class HtmlMaker {
                     StringBuilder _doubleLessThan_11 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_10, _name_3);
                     HtmlMaker.operator_doubleLessThan(_doubleLessThan_11, "</div>");
                     StringBuilder _doubleLessThan_12 = HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element>");
+                    float _credits = cis.getCourse().getCredits();
+                    StringBuilder _doubleLessThan_13 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_12, Float.valueOf(_credits));
+                    HtmlMaker.operator_doubleLessThan(_doubleLessThan_13, "</div>");
                     boolean _isMandatory = cis.isMandatory();
-                    StringBuilder _doubleLessThan_13 = HtmlMaker.operator_doubleLessThan(_doubleLessThan_12, Boolean.valueOf(_isMandatory));
-                    HtmlMaker.operator_doubleLessThan(_doubleLessThan_13, "</div> </div>");
+                    if (_isMandatory) {
+                      HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element> O </div> </div>");
+                    } else {
+                      HtmlMaker.operator_doubleLessThan(stringBuilder, "<div class=element> VA </div> </div>");
+                    }
                   }
                 }
               }
