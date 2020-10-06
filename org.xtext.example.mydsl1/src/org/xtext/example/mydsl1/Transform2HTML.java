@@ -8,6 +8,10 @@ import ecore.Semester;
 import ecore.Specialisation;
 import ecore.util.EcoreResourceFactoryImpl;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -22,7 +26,17 @@ public class Transform2HTML {
 
 		
 		String markdown = new HtmlMaker().generate(d);
-		System.out.println(markdown);
+		//System.out.println(markdown);
+		File html = new File("webpage.html");
+		try {
+			FileWriter writer = new FileWriter("webpage.html");
+			writer.write(markdown);
+			writer.close();
+			System.out.println("succsess");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
