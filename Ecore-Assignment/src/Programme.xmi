@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:Programme
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="ecore"
+    xsi:schemaLocation="ecore studyPlan.ecore"
+    name="Datateknologi">
+  <Specialisations
+      name="AI">
+    <semesterInSpecialisation
+        semesterNumber="3"/>
+  </Specialisations>
+  <Specialisations
+      name="Programvare">
+    <semesterInSpecialisation
+        semesterNumber="3">
+      <courseInSemester
+          mandatory="true">
+        <Course/>
+      </courseInSemester>
+    </semesterInSpecialisation>
+  </Specialisations>
+  <semesterInProgramme
+      semesterNumber="1">
+    <courseInSemester>
+      <Course
+          courseCode="TDT4200"
+          name="DATA"
+          credits="7.5"
+          level="Basic"/>
+    </courseInSemester>
+  </semesterInProgramme>
+</ecore:Programme>

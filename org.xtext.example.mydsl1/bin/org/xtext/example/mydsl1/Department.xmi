@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="ecore"
+    xsi:schemaLocation="ecore ../../../../../../Assignment1/src/studyPlan.ecore"
+    Name="IV">
+  <studyprogramme
+      name="Ingeniørvitenskap og IKT">
+    <Specialisations
+        name="Produksjonsledelse">
+      <semesterInSpecialisation
+          semesterNumber="3">
+        <courseInSemester
+            Course="//@courses.0"
+            mandatory="true"/>
+      </semesterInSpecialisation>
+    </Specialisations>
+    <semesterInProgramme
+        semesterNumber="1">
+      <courseInSemester
+          Course="//@courses.0"/>
+    </semesterInProgramme>
+  </studyprogramme>
+  <studyprogramme
+      name="Datateknologi">
+    <Specialisations
+        name="AI">
+      <semesterInSpecialisation
+          semesterNumber="3">
+        <courseInSemester
+            Course="//@courses.1"/>
+      </semesterInSpecialisation>
+    </Specialisations>
+    <Specialisations
+        name="Programvare">
+      <semesterInSpecialisation
+          semesterNumber="3">
+        <courseInSemester
+            Course="//@courses.2"
+            mandatory="true"/>
+        <courseInSemester
+            Course="//@courses.0"/>
+      </semesterInSpecialisation>
+    </Specialisations>
+    <Specialisations
+        name="Something">
+      <semesterInSpecialisation
+          semesterNumber="5">
+        <courseInSemester
+            Course="//@courses.1"
+            mandatory="true"/>
+      </semesterInSpecialisation>
+    </Specialisations>
+    <semesterInProgramme
+        semesterNumber="1">
+      <courseInSemester
+          Course="//@courses.2"
+          mandatory="true"/>
+    </semesterInProgramme>
+  </studyprogramme>
+  <courses courseCode="TMA4100"
+      name="Matte"/>
+  <courses courseCode="TDT4141"
+      name="Programvarearkitektur"
+      credits="7.5"
+      level="3"/>
+  <courses courseCode="Tdt4100"
+      name="Avansert programvaredesign"
+      credits="7.5"
+      level="3"/>
+</ecore:Department>

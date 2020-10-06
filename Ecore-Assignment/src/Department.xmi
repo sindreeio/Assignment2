@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="ecore"
+    xsi:schemaLocation="ecore studyPlan.ecore"
+    Name="IV">
+  <studyprogramme
+      name="Ingeniørvitenskap og IKT">
+    <Specialisations
+        name="Produksjonsledelse">
+      <semesterInSpecialisation
+          semesterNumber="3">
+        <courseInSemester
+            Course="//@courses.0"
+            mandatory="true"/>
+      </semesterInSpecialisation>
+    </Specialisations>
+    <semesterInProgramme
+        semesterNumber="1">
+      <courseInSemester
+          Course="//@courses.0"/>
+    </semesterInProgramme>
+  </studyprogramme>
+  <courses courseCode="TMA4100"
+      name="Matte"/>
+  <courses courseCode="TDT4141"
+      name="Programvarearkitektur"
+      credits="7.5"
+      level="3"/>
+</ecore:Department>
