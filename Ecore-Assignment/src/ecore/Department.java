@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ecore.Department#getStudyprogramme <em>Studyprogramme</em>}</li>
  *   <li>{@link ecore.Department#getName <em>Name</em>}</li>
  *   <li>{@link ecore.Department#getCourses <em>Courses</em>}</li>
+ *   <li>{@link ecore.Department#getIndividualStudyPlans <em>Individual Study Plans</em>}</li>
  * </ul>
  *
  * @see ecore.EcorePackage#getDepartment()
@@ -70,5 +71,17 @@ public interface Department extends EObject {
 	 * @generated
 	 */
 	EList<Course> getCourses();
+
+	/**
+	 * Returns the value of the '<em><b>Individual Study Plans</b></em>' containment reference list.
+	 * The list contents are of type {@link ecore.IndividualStudyPlan}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Individual Study Plans</em>' containment reference list.
+	 * @see ecore.EcorePackage#getDepartment_IndividualStudyPlans()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<IndividualStudyPlan> getIndividualStudyPlans();
 
 } // Department

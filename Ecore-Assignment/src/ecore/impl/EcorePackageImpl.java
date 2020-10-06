@@ -396,6 +396,16 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSemester_NumberOfCourses() {
+		return (EAttribute)semesterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getIndividualStudyPlan() {
 		return individualStudyPlanEClass;
 	}
@@ -576,6 +586,16 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getDepartment_IndividualStudyPlans() {
+		return (EReference)departmentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EDataType getGrade() {
 		return gradeEDataType;
 	}
@@ -644,6 +664,7 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		semesterEClass = createEClass(SEMESTER);
 		createEAttribute(semesterEClass, SEMESTER__SEMESTER_NUMBER);
 		createEReference(semesterEClass, SEMESTER__COURSE_IN_SEMESTER);
+		createEAttribute(semesterEClass, SEMESTER__NUMBER_OF_COURSES);
 
 		individualStudyPlanEClass = createEClass(INDIVIDUAL_STUDY_PLAN);
 		createEAttribute(individualStudyPlanEClass, INDIVIDUAL_STUDY_PLAN__STUDENT_NAME);
@@ -668,6 +689,7 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		createEReference(departmentEClass, DEPARTMENT__STUDYPROGRAMME);
 		createEAttribute(departmentEClass, DEPARTMENT__NAME);
 		createEReference(departmentEClass, DEPARTMENT__COURSES);
+		createEReference(departmentEClass, DEPARTMENT__INDIVIDUAL_STUDY_PLANS);
 
 		// Create data types
 		gradeEDataType = createEDataType(GRADE);
@@ -728,6 +750,7 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemester_SemesterNumber(), ecorePackage.getEInt(), "semesterNumber", null, 0, 1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSemester_CourseInSemester(), this.getcourseInSemester(), this.getcourseInSemester_Semester(), "courseInSemester", null, 0, -1, Semester.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemester_NumberOfCourses(), ecorePackage.getEInt(), "numberOfCourses", null, 0, 1, Semester.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(individualStudyPlanEClass, IndividualStudyPlan.class, "IndividualStudyPlan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIndividualStudyPlan_StudentName(), ecorePackage.getEString(), "studentName", null, 0, 1, IndividualStudyPlan.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -752,6 +775,7 @@ public class EcorePackageImpl extends EPackageImpl implements EcorePackage {
 		initEReference(getDepartment_Studyprogramme(), this.getProgramme(), null, "studyprogramme", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Courses(), this.getCourse(), null, "courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDepartment_IndividualStudyPlans(), this.getIndividualStudyPlan(), null, "individualStudyPlans", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(gradeEDataType, Character.class, "Grade", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

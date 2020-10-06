@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ecore.impl.SemesterImpl#getSemesterNumber <em>Semester Number</em>}</li>
  *   <li>{@link ecore.impl.SemesterImpl#getCourseInSemester <em>Course In Semester</em>}</li>
+ *   <li>{@link ecore.impl.SemesterImpl#getNumberOfCourses <em>Number Of Courses</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,6 +65,16 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	 * @ordered
 	 */
 	protected EList<courseInSemester> courseInSemester;
+
+	/**
+	 * The default value of the '{@link #getNumberOfCourses() <em>Number Of Courses</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumberOfCourses()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_OF_COURSES_EDEFAULT = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +134,17 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int getNumberOfCourses() {
+		int i = this.courseInSemester.size();
+		return i;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -161,6 +183,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return getSemesterNumber();
 			case EcorePackage.SEMESTER__COURSE_IN_SEMESTER:
 				return getCourseInSemester();
+			case EcorePackage.SEMESTER__NUMBER_OF_COURSES:
+				return getNumberOfCourses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,6 +239,8 @@ public class SemesterImpl extends MinimalEObjectImpl.Container implements Semest
 				return semesterNumber != SEMESTER_NUMBER_EDEFAULT;
 			case EcorePackage.SEMESTER__COURSE_IN_SEMESTER:
 				return courseInSemester != null && !courseInSemester.isEmpty();
+			case EcorePackage.SEMESTER__NUMBER_OF_COURSES:
+				return getNumberOfCourses() != NUMBER_OF_COURSES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

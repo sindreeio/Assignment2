@@ -324,13 +324,22 @@ public interface EcorePackage extends EPackage {
 	int SEMESTER__COURSE_IN_SEMESTER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Number Of Courses</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER__NUMBER_OF_COURSES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_FEATURE_COUNT = 2;
+	int SEMESTER_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semester</em>' class.
@@ -592,13 +601,22 @@ public interface EcorePackage extends EPackage {
 	int DEPARTMENT__COURSES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Individual Study Plans</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTMENT__INDIVIDUAL_STUDY_PLANS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Department</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTMENT_FEATURE_COUNT = 3;
+	int DEPARTMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Department</em>' class.
@@ -847,6 +865,17 @@ public interface EcorePackage extends EPackage {
 	EReference getSemester_CourseInSemester();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ecore.Semester#getNumberOfCourses <em>Number Of Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number Of Courses</em>'.
+	 * @see ecore.Semester#getNumberOfCourses()
+	 * @see #getSemester()
+	 * @generated
+	 */
+	EAttribute getSemester_NumberOfCourses();
+
+	/**
 	 * Returns the meta object for class '{@link ecore.IndividualStudyPlan <em>Individual Study Plan</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1038,6 +1067,17 @@ public interface EcorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDepartment_Courses();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ecore.Department#getIndividualStudyPlans <em>Individual Study Plans</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Individual Study Plans</em>'.
+	 * @see ecore.Department#getIndividualStudyPlans()
+	 * @see #getDepartment()
+	 * @generated
+	 */
+	EReference getDepartment_IndividualStudyPlans();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Character <em>Grade</em>}'.
@@ -1264,6 +1304,14 @@ public interface EcorePackage extends EPackage {
 		EReference SEMESTER__COURSE_IN_SEMESTER = eINSTANCE.getSemester_CourseInSemester();
 
 		/**
+		 * The meta object literal for the '<em><b>Number Of Courses</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTER__NUMBER_OF_COURSES = eINSTANCE.getSemester_NumberOfCourses();
+
+		/**
 		 * The meta object literal for the '{@link ecore.impl.IndividualStudyPlanImpl <em>Individual Study Plan</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1416,6 +1464,14 @@ public interface EcorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DEPARTMENT__COURSES = eINSTANCE.getDepartment_Courses();
+
+		/**
+		 * The meta object literal for the '<em><b>Individual Study Plans</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPARTMENT__INDIVIDUAL_STUDY_PLANS = eINSTANCE.getDepartment_IndividualStudyPlans();
 
 		/**
 		 * The meta object literal for the '<em>Grade</em>' data type.

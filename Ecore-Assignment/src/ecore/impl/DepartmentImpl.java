@@ -5,6 +5,7 @@ package ecore.impl;
 import ecore.Course;
 import ecore.Department;
 import ecore.EcorePackage;
+import ecore.IndividualStudyPlan;
 import ecore.Programme;
 
 import java.util.Collection;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link ecore.impl.DepartmentImpl#getStudyprogramme <em>Studyprogramme</em>}</li>
  *   <li>{@link ecore.impl.DepartmentImpl#getName <em>Name</em>}</li>
  *   <li>{@link ecore.impl.DepartmentImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link ecore.impl.DepartmentImpl#getIndividualStudyPlans <em>Individual Study Plans</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +80,16 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * @ordered
 	 */
 	protected EList<Course> courses;
+
+	/**
+	 * The cached value of the '{@link #getIndividualStudyPlans() <em>Individual Study Plans</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIndividualStudyPlans()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<IndividualStudyPlan> individualStudyPlans;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,12 +165,27 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * @generated
 	 */
 	@Override
+	public EList<IndividualStudyPlan> getIndividualStudyPlans() {
+		if (individualStudyPlans == null) {
+			individualStudyPlans = new EObjectContainmentEList<IndividualStudyPlan>(IndividualStudyPlan.class, this, EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS);
+		}
+		return individualStudyPlans;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case EcorePackage.DEPARTMENT__STUDYPROGRAMME:
 				return ((InternalEList<?>)getStudyprogramme()).basicRemove(otherEnd, msgs);
 			case EcorePackage.DEPARTMENT__COURSES:
 				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+			case EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS:
+				return ((InternalEList<?>)getIndividualStudyPlans()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,6 +204,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return getName();
 			case EcorePackage.DEPARTMENT__COURSES:
 				return getCourses();
+			case EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS:
+				return getIndividualStudyPlans();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,6 +230,10 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				getCourses().clear();
 				getCourses().addAll((Collection<? extends Course>)newValue);
 				return;
+			case EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS:
+				getIndividualStudyPlans().clear();
+				getIndividualStudyPlans().addAll((Collection<? extends IndividualStudyPlan>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -222,6 +255,9 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case EcorePackage.DEPARTMENT__COURSES:
 				getCourses().clear();
 				return;
+			case EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS:
+				getIndividualStudyPlans().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,6 +276,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case EcorePackage.DEPARTMENT__COURSES:
 				return courses != null && !courses.isEmpty();
+			case EcorePackage.DEPARTMENT__INDIVIDUAL_STUDY_PLANS:
+				return individualStudyPlans != null && !individualStudyPlans.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

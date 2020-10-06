@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ecore.Semester#getSemesterNumber <em>Semester Number</em>}</li>
  *   <li>{@link ecore.Semester#getCourseInSemester <em>Course In Semester</em>}</li>
+ *   <li>{@link ecore.Semester#getNumberOfCourses <em>Number Of Courses</em>}</li>
  * </ul>
  *
  * @see ecore.EcorePackage#getSemester()
@@ -59,5 +60,16 @@ public interface Semester extends EObject {
 	 * @generated
 	 */
 	EList<courseInSemester> getCourseInSemester();
+
+	/**
+	 * Returns the value of the '<em><b>Number Of Courses</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number Of Courses</em>' attribute.
+	 * @see ecore.EcorePackage#getSemester_NumberOfCourses()
+	 * @model changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	int getNumberOfCourses();
 
 } // Semester

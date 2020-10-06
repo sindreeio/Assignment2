@@ -43,6 +43,8 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courseInSemester" upperBound="-1"
         eType="#//courseInSemester" containment="true" eOpposite="#//courseInSemester/semester"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfCourses" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndividualStudyPlan">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="studentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -88,5 +90,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="individualStudyPlans" upperBound="-1"
+        eType="#//IndividualStudyPlan" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
